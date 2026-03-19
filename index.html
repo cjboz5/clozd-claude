@@ -32,7 +32,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    #what-is-claude,
     #why-it-matters,
     #what-youll-find,
     #start-here {
@@ -322,20 +321,6 @@
       display: block;
     }
 
-    .brand-placeholder {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--muted);
-      border: 2px dashed rgba(39,79,219,0.18);
-      width: 100%;
-      height: 60px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(247,248,249,0.8);
-    }
-
     .plus-mark {
       flex-shrink: 0;
       width: 34px;
@@ -388,6 +373,62 @@
       font-weight: 700;
     }
 
+    /* ON THIS PAGE */
+    .page-jump-wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 40px 0;
+      position: relative;
+      z-index: 4;
+    }
+
+    .page-jump {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(20,166,248,0.04) 100%);
+      border: 1px solid rgba(39,79,219,0.10);
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 6px 24px rgba(20,166,248,0.06);
+    }
+
+    .page-jump-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--patina);
+    }
+
+    .page-jump-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .page-jump-link {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: var(--royal);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(39,79,219,0.12);
+      transition: background .2s, color .2s, border-color .2s, box-shadow .2s;
+    }
+
+    .page-jump-link:hover {
+      color: var(--blue);
+      border-color: rgba(20,166,248,0.22);
+      box-shadow: 0 4px 14px rgba(20,166,248,0.08);
+    }
+
     /* MAIN */
     .main {
       max-width: 1120px;
@@ -399,7 +440,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
-      margin-top: -34px;
+      margin-top: 24px;
       margin-bottom: 28px;
       position: relative;
       z-index: 3;
@@ -774,6 +815,10 @@
         padding: 0 20px 64px;
       }
 
+      .page-jump-wrap {
+        padding: 16px 20px 0;
+      }
+
       .section-banner-inner,
       .hero-panel {
         padding-left: 24px;
@@ -802,10 +847,9 @@
     </div>
     <div class="nav-right">
       <div class="nav-links">
-        <a class="nav-link" href="#what-is-claude">What is Claude?</a>
-        <a class="nav-link" href="#why-it-matters">Why it matters</a>
-        <a class="nav-link" href="#what-youll-find">Pages</a>
-        <a class="nav-link" href="#start-here">How to start</a>
+        <a class="nav-link active" href="https://cjboz5.github.io/clozd-claude/">Home</a>
+        <a class="nav-link" href="https://cjboz5.github.io/clozd-command-guide/">Command Guide</a>
+        <a class="nav-link" href="https://cjboz5.github.io/clozd-branding/">Clozd Branding</a>
       </div>
       <span class="nav-tag">Clozd + Claude</span>
       <span class="nav-badge">Internal use only</span>
@@ -840,14 +884,15 @@
         <div class="logo-lockup">
           <div class="brand-box">
             <img src="Logos/1_PNG_s/1 Main Horizontal/Clozd Logo Primary.png" alt="Clozd logo" />
+          </div>
+
+          <div class="plus-mark">+</div>
+
+          <div class="brand-box">
+            <img src="3rdpartylogos/claude_logo.png" alt="Claude logo" />
+          </div>
         </div>
 
-        <div class="plus-mark">+</div>
-
-        <div class="brand-box">
-          <img src="3rdpartylogos/claude_logo.png" alt="Claude logo" />
-        </div>
-</div>
         <h3>What this site is for</h3>
         <p>
           This is the front door for Clozd's Claude resources. Instead of keeping everything in one long page, this site gives you a simple starting point and routes you to the right guide based on what you need.
@@ -862,12 +907,23 @@
     </div>
   </section>
 
+  <div class="page-jump-wrap">
+    <div class="page-jump">
+      <span class="page-jump-label">On this page</span>
+      <div class="page-jump-links">
+        <a class="page-jump-link" href="#why-it-matters">Why it matters</a>
+        <a class="page-jump-link" href="#what-youll-find">Pages</a>
+        <a class="page-jump-link" href="#start-here">How to start</a>
+      </div>
+    </div>
+  </div>
+
   <main class="main">
 
     <div class="quick-start">
       <div class="quick-card">
         <h4>New to Claude?</h4>
-        <p>Start here to understand what Claude is, what it is good at, and how it fits into day-to-day work at Clozd.</p>
+        <p>Start here to understand how Claude fits into day-to-day work at Clozd.</p>
       </div>
       <div class="quick-card">
         <h4>Need practical help?</h4>
@@ -876,44 +932,6 @@
       <div class="quick-card">
         <h4>Making something shareable?</h4>
         <p>Use the branding page to make sure decks, one-pagers, and assets feel polished and aligned with Clozd.</p>
-      </div>
-    </div>
-
-    <section class="section-banner" id="what-is-claude">
-      <div class="section-banner-inner">
-        <div class="section-banner-label">Overview</div>
-        <div class="section-banner-title">What Claude is</div>
-        <div class="section-banner-sub">
-          Claude is an AI assistant that can help you think, write, research, organize, summarize, and create faster. The real value is not just getting words on a page — it is accelerating the path from rough idea to useful output.
-        </div>
-      </div>
-    </section>
-
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>What Claude does well</h3>
-        <p>
-          Claude is strongest when you give it a real job to do. It can take context, synthesize information, and turn that into something usable.
-        </p>
-        <ul>
-          <li>Summarize and structure messy information</li>
-          <li>Draft emails, briefs, pages, decks, and one-pagers</li>
-          <li>Help research accounts, contacts, competitors, and markets</li>
-          <li>Refine ideas quickly through back-and-forth iteration</li>
-        </ul>
-      </div>
-
-      <div class="info-card">
-        <h3>What Claude is not</h3>
-        <p>
-          Claude is not a replacement for judgment, context, or taste. It works best as a force multiplier — especially when a human gives it direction, edits the output, and applies the right business context.
-        </p>
-        <ul>
-          <li>Not a substitute for strategic thinking</li>
-          <li>Not automatically correct on every fact or assumption</li>
-          <li>Not a one-shot answer engine for high-stakes work</li>
-          <li>Best when paired with review, iteration, and brand standards</li>
-        </ul>
       </div>
     </div>
 
@@ -1047,34 +1065,5 @@
       <a href="#top" class="footer-top-link">Back to top</a>
     </div>
   </footer>
-
-  <script>
-    const sections = document.querySelectorAll('#what-is-claude, #why-it-matters, #what-youll-find, #start-here');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    function setActiveLink() {
-      let currentSection = null;
-      const scrollPosition = window.scrollY + 160;
-
-      sections.forEach(section => {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-
-        if (scrollPosition >= top && scrollPosition < bottom) {
-          currentSection = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + currentSection) {
-          link.classList.add('active');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', setActiveLink);
-    window.addEventListener('load', setActiveLink);
-  </script>
 </body>
 </html>
